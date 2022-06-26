@@ -1,0 +1,34 @@
+.calculator{
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    
+    /* justify-content: center; */
+    /* margin-left: 50%; */
+    /* margin-top: 50%; */
+    /* padding: 50%; */
+}
+body{
+    background-image: linear-gradient(to right,skyblue,green);
+}
+
+button{
+    width: 80px;
+    height: 70px;
+    font-size: large;
+}
+#clear, #delete{
+    width: 164px;
+}
+button:hover{
+    cursor: pointer;
+}
+.display{
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 70px;
+}
