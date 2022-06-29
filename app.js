@@ -34,15 +34,29 @@ clear.addEventListener("click", ()=>{
 
 
 delete_button.addEventListener("click",()=> {
-    if(answer.innerText){
-        answer.innerText=answer.innerText.substring(0,answer.innerText.length-1);
-    }
-    else if(operand2.innerText){
+    if(operand2.innerText){
         operand2.innerText=operand2.innerText.substring(0,operand2.innerText.length-1);
     }
     else
         operand1.innerText=operand1.innerText.substring(0,operand1.innerText.length-1);
 });
+
+function backspace(e){
+    while(e.code=='Backspace'){
+         if(operand2.innerText){
+        operand2.innerText=operand2.innerText.substring(0,operand2.innerText.length-1);
+    }
+    else
+        operand1.innerText=operand1.innerText.substring(0,operand1.innerText.length-1);}
+}
+
+delete_button.addEventListener('keydown', ()=>{
+    if(operand2.innerText){
+        operand2.innerText=operand2.innerText.substring(0,operand2.innerText.length-1);
+    }
+    else
+        operand1.innerText=operand1.innerText.substring(0,operand1.innerText.length-1);
+})
 
 // function assign_operation(string){
   
@@ -85,12 +99,6 @@ function evaluator(){
 
 equal.addEventListener("click", evaluator);
 
-function clear_display(){
-    operand1.innerText="";
-    operand2.innerText="";
-    operation.innerText="";
-}
-
 function add(a, b){
     return a+b;
 }
@@ -108,7 +116,7 @@ function divide(a,b){
         return a/b;
     }
     else 
-    return "Error! Dividing by zero.";
+    return "Not Defined";
 }
 
 function operate(operator_, a, b){
